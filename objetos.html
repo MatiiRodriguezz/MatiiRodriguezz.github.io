@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Document</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <div class="container py-2">
+        <p class="lead">ingrese usuarios</p>
+        <form>
+          <input id="Nombre" type="text" placeholder="Ingresa Nombre" class="form-control my-2">  
+          <input id="Edad" type="text" placeholder="Ingresa Edad" class="form-control my-2">
+          <button id="boton" class="btn btn-success" type="reset" onclick="capturar();">Agregar</button>
+        </form>
+    </div>
+    <div class="container">
+        <table class="table">
+            <thead class="thead-inverse">ç
+                <tr>
+                   <th>Nombre</th> 
+                   <th>Edad</th>
+                </tr>
+            </thead>
+            
+        </table>
+    </div>
+
+<script>
+function capturar (){
+//console.log("capturado");
+function Persona(Nombre,Edad){
+    this.Nombre=Nombre;
+    this.Edad=Edad;
+}
+var Nombrecapturar = document.getElementById("nombre").value;
+//console.log(Nombrecapturar);
+var Edadcapturar = document.getElementById("edad").value;
+//console.log(Edadcapturar);
+
+var nuevosujeto = new Persona(Nombrecapturar,Edadcapturar);
+console.log(nuevosujeto);
+Agregar();
+}
+
+ var basedatos=  {};
+ function Agregar(){
+basedatos.push(nuevosujeto)
+console.log(basedatos);
+document.getElementById("tabla").innerHTML += "<tbody><td>"+nuevosujeto.Nombre+"</td><td>"+nuevosujeto.Edad+"</td></tbody>";
+
+ };
+</script>
+
+
+
+</body>
+</html>
